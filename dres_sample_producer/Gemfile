@@ -6,6 +6,6 @@ gem 'puma',     '~> 3.11'
 gem 'bootsnap', '>= 1.4.0', require: false
 
 
-gem 'rails_event_store', '~> 2.1.0'
-gem 'dres_client',       '~> 0.6.0', path: '../dres_client'
-gem 'dres_rails',        '~> 0.6.0', path: '../dres_rails'
+gem 'rails_event_store', github: 'RailsEventStore/rails_event_store'
+gem 'dres_client', github: 'RailsEventStore/rails_event_store', glob: 'contrib/distributed_rails_event_store/dres_client/*.gemspec'
+gem 'dres_rails', github: 'RailsEventStore/rails_event_store', glob: 'contrib/distributed_rails_event_store/dres_rails/*.gemspec'
