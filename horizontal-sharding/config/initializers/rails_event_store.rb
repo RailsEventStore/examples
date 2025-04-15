@@ -5,7 +5,7 @@ require "arkency/command_bus"
 Rails.configuration.to_prepare do
   Rails.configuration.event_store = RailsEventStore::Client.new(
     repository: RubyEventStore::ActiveRecord::EventRepository.new(
-      model_factory: RubyEventStore::ActiveRecord::WithAbstractBaseClass.new(ShardRecord), 
+      model_factory: RubyEventStore::ActiveRecord::WithAbstractBaseClass.new(ShardRecord),
       serializer: JSON,
     ),
     dispatcher: RubyEventStore::ComposedDispatcher.new(

@@ -7,10 +7,10 @@ class TenantsController < ApplicationController
     end
     render :invalid and return unless @tenant
 
-    @visits = Rails.configuration.event_store.read.of_type([VisitRegistered]).backward.limit(10).map do |fact|
+    @visits = Rails.configuration.event_store.read.of_type([ VisitRegistered ]).backward.limit(10).map do |fact|
       Visit.new(
         timestamp: fact.timestamp,
-        url: [ruby_event_store_browser_app_path, "events", fact.event_id].join("/"),
+        url: [ ruby_event_store_browser_app_path, "events", fact.event_id ].join("/"),
         shard: fact.metadata[:shard]
       )
     end
