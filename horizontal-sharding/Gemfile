@@ -62,3 +62,7 @@ group :test do
   gem "selenium-webdriver"
 end
 gem "rails_event_store", "~> 2.16.0"
+
+gem "tailwindcss-ruby", "~> 4.1"
+
+gem "tailwindcss-rails", "~> 4.2"

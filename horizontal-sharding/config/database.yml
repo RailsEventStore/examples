@@ -10,8 +10,18 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: storage/development.sqlite3
+  primary:
+    <<: *default
+    database: storage/development.sqlite3
+    migrations_paths: db/migrate
+  arkency:
+    <<: *default
+    database: storage/development.arkency.sqlite3
+    migrations_paths: db/shards
+  railseventstore:
+    <<: *default
+    database: storage/development.railseventstore.sqlite3
+    migrations_paths: db/shards
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -39,3 +49,11 @@ production:
     <<: *default
     database: storage/production_cable.sqlite3
     migrations_paths: db/cable_migrate
+  arkency:
+    <<: *default
+    database: storage/production.arkency.sqlite3
+    migrations_paths: db/shards
+  railseventstore:
+    <<: *default
+    database: storage/production.railseventstore.sqlite3
+    migrations_paths: db/shards

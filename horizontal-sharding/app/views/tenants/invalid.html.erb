@@ -1,0 +1,17 @@
+<div class="flow-root w-full mb-16">
+  <ul role="list" class="-mb-8">
+    <% Tenant.all.each do |t| %>
+      <a href="http://<%= t.host %>">
+        <li>
+          <div class="relative pb-8">
+              <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
+                <div>
+                  <p class="text-sm text-gray-500">Go to: <span class="font-medium text-gray-900"><%= t.name %></span></p>
+                </div>
+            </div>
+          </div>
+        </li>
+      </a>
+    <% end %>
+  </ul>
+</div>
