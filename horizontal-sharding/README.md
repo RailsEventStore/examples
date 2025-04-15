@@ -1,24 +1,12 @@
-# README
+# Usage
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To use predefined hosts install `puma-dev` [see instructions here](https://github.com/puma/puma-dev)
+and set it up for: `arkency` & `railseventstore` test domains.
 
-Things you may want to cover:
+Then standard way of Rails:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+bundle install
+bin/rails db:setup
+bin/dev
+```
