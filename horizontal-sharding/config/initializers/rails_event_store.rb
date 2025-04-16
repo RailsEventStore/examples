@@ -9,7 +9,7 @@ Rails.configuration.to_prepare do
       serializer: JSON,
     ),
     dispatcher: RubyEventStore::ComposedDispatcher.new(
-      RailsEventStore::AfterCommitAsyncDispatcher.new(
+      RubyEventStore::ImmediateAsyncDispatcher.new(
         scheduler: RailsEventStore::ActiveJobScheduler.new(serializer: JSON)
       ),
       RubyEventStore::Dispatcher.new
